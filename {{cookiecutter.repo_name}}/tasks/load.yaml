@@ -1,0 +1,7 @@
+---
+
+- name: Include distribution specific variables
+  {% raw %}
+  include_vars: "{{ ansible_distribution }}.yaml"
+  {% endraw %}
+  tags: {{cookiecutter.short_role_name}}

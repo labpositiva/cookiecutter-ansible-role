@@ -1,0 +1,11 @@
+---
+# task for {{cookiecutter.role_name}}
+
+- name: copy templates
+  template:
+  {% raw %}
+    src: "{{ item.src }}"
+    dest: "{{ item.dest }}"
+  {% endraw %}
+  with_items: _{{cookiecutter.short_role_name}}.templates
+  when: _{{cookiecutter.short_role_name}}.templates is defined

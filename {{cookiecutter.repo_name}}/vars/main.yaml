@@ -1,0 +1,15 @@
+---
+# vars file for {{cookiecutter.role_name}}
+
+# _{{cookiecutter.role_name}}_create_files:
+  {% raw %}
+#   - path: "{{ _path_dir }}"
+#     state: "directory"
+#     # group: "root"
+#     owner: "{{ user }}"
+  {% endraw %}
+
+# _{{cookiecutter.role_name}}:
+#   templates:
+#     - src: "default.j2"
+#       dest: {{ "{{" }} _{{cookiecutter.role_name}}_file {{ "}}" }}
