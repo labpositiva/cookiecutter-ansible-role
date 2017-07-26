@@ -1,0 +1,15 @@
+---
+# tasks file for {{cookiecutter.role_name}} (CentOS specific)
+
+- name: Ensure apt cache is up to date
+  yum:
+    update_cache: yes
+
+
+- name: Install {{cookiecutter.short_role_name}} dependencies
+  {% raw %}
+  yum: name={{ item }} state=present update_cache=yes
+  {% endraw %}
+  with_items: _{{cookiecutter.short_role_name}}_packages
+  tags:
+    - {{cookiecutter.short_role_name}}

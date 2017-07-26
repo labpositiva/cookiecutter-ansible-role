@@ -1,0 +1,17 @@
+{
+	"full_name": "Luis Mayta",
+	"email": "slovacus@gmail.com",
+	"role": "role",
+	"role_name": "company.role",
+	"short_role_name": "Role",
+  "github_user": "labpositiva",
+  "github_author": "https://github.com/luismayta",
+  "company": "labpositiva",
+	"repo_name": "ansible-super-role",
+	"short_description": "An ansible role to install on several GNU/Linux distributions.",
+	"release_date": "2017-04-26",
+	"year": "2017",
+	"version": "0.0.0",
+  "min_ansible_version": "2.0.0",
+  "license": "Mit"
+}

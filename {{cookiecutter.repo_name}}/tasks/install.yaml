@@ -1,0 +1,13 @@
+---
+# task for {{cookiecutter.role_name}}
+
+- include: install.d/CentOS.yaml
+  when: ansible_os_family == "Redhat"
+  tags:
+    - {{cookiecutter.short_role_name}}
+
+- include: install.d/Ubuntu.yaml
+  when:
+    - ansible_os_family == "Debian"
+  tags:
+    - {{cookiecutter.short_role_name}}

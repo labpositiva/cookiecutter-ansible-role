@@ -1,0 +1,29 @@
+---
+
+# task file for {{cookiecutter.role_name}}
+
+- name: Update package repositories
+  sudo: yes
+  apt:
+    update_cache: True
+  when:
+    - ansible_os_family == "Debian"
+  tags:
+    - apt
+    - update_cache
+
+- name: Install {{cookiecutter.short_role_name}} package dependencies
+  become: yes
+  package:
+  {% raw %}
+    name: "{{ item }}"
+  {% endraw %}
+    state: present
+  register: install_{{cookiecutter.short_role_name}}_package_dependencies
+  when:
+    - _{{cookiecutter.short_role_name}}_package_dependencies is defined
+  with_items:
+    - {{"_{{ cookiecutter.short_role_name_package_dependencies }} | default([]) }}"}}
+  tags:
+    - packages
+    - dependencies

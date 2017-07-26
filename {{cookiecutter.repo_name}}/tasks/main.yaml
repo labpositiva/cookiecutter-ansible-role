@@ -1,0 +1,26 @@
+---
+# task for {{cookiecutter.role_name}}
+
+- include: include_vars.yaml
+
+- include: load.yaml
+
+- include: apps.yaml
+
+- include: dependences.yaml
+
+- include: files.yaml
+
+- include: host.yaml
+
+- include: pip.yaml
+
+- include: configure.yaml
+
+- include: install.yaml
+
+- include: templates.yaml
+
+- include: environment.yaml
+
+- include: post_install.yaml

@@ -1,0 +1,16 @@
+---
+
+# task file for {{cookiecutter.role_name}}
+
+- name: Ensure apt cache is up to date
+  apt:
+    update_cache: yes
+
+
+- name: Install {{cookiecutter.short_role_name}} dependencies
+  {% raw %}
+  apt: name={{ item }} state=present update_cache=yes
+  {% endraw %}
+  with_items: _{{cookiecutter.short_role_name}}_packages
+  tags:
+    - {{cookiecutter.short_role_name}}
