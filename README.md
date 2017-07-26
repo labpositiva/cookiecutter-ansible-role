@@ -18,10 +18,20 @@ It infuses antigravity (or maybe not).
 
 ## Requirements
 
- - Linux
-   - none
- - OSX
-   - none
+```bash
+  make setup
+```
+
+## Developing
+
+## Setup
+
+```bash
+  λ cat .env-template > .env
+  λ make setup
+  λ make build
+  λ make up
+```
 
 ## Usage
 
