@@ -25,8 +25,8 @@
     -   id: debug-statements
     -   id: autopep8-wrapper
         args:
-          - -i
-          - --ignore=E501
+        - -i
+        - --ignore=E501
         language_version: python3
     -   id: double-quote-string-fixer
     -   id: check-docstring-first
@@ -35,7 +35,10 @@
     -   id: name-tests-test
     -   id: flake8
         files: ^src/.*\.py$
-        args: [--max-line-length=80, --diff, "--exclude=docs,migrations"]
+        args:
+        - --max-line-length=80
+        - --diff
+        - --exclude=docs,migrations
 -   repo: https://github.com/pre-commit/mirrors-pylint.git
     sha: v1.7.2
     hooks:
@@ -48,7 +51,7 @@
         - --disable=no-name-in-module,import-error
         - --ignore=settings_test, migrations
 -   repo: https://github.com/pre-commit/pre-commit.git
-    sha: v0.15.2
+    sha: v0.15.4
     hooks:
     -   id: validate_config
     -   id: validate_manifest
