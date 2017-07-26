@@ -1,0 +1,14 @@
+---
+# environment file for {{cookiecutter.role_name}}
+
+- name: Create files {{cookiecutter.short_role_name}}
+  sudo: yes
+  file:
+  {% raw %}
+    path: "{{ item.path }}"
+    state: "{{ item.state }}"
+    owner: "{{ item.owner }}"
+  {% endraw %}
+  with_items: _{{cookiecutter.short_role_name}}_create_files
+  when:
+    - _{{cookiecutter.short_role_name}}_create_files is defined

@@ -1,0 +1,21 @@
+version = '0.1.8'
+
+[[files."CHANGELOG.md"]]
+search = """
+## [Unreleased]
+"""
+replace = """
+## [Unreleased]
+
+{% raw %}
+## [{{new_version}}] - {{utcnow | strftime('%Y-%m-%d')}}
+"""
+{% endraw %}
+[[files."CHANGELOG.md"]]
+search = """
+[Unreleased]: https://github.com/{{cookiecutter.github_user}}/{{cookiecutter.repo_name}}/compare/{{ "{{" }}old_version{{ "}}" }}...HEAD
+"""
+replace = """
+[Unreleased]: https://github.com/{{cookiecutter.github_user}}/{{cookiecutter.repo_name}}/compare/{{ "{{" }}new_version{{ "}}" }}...HEAD
+[{{ "{{" }}new_version{{ "}}" }}]: https://github.com/{{cookiecutter.github_user}}/{{cookiecutter.repo_name}}/compare/{{ "{{" }}old_version{{ "}}" }}...{{ "{{" }}new_version{{ "}}" }}
+"""
